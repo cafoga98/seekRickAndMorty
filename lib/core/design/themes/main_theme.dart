@@ -4,7 +4,7 @@ import 'package:seek_rickandmorty/core/design/tokens/colors.dart';
 
 import '../tokens/styles_to_text.dart';
 
-ThemeData occLightTheme(BuildContext context) => ThemeData(
+ThemeData customLightTheme(BuildContext context) => ThemeData(
       useMaterial3: true,
       primaryColor: MainColors.colorsCustom.portalGreen.color,
       splashColor: MainColors.colorsCustom.portalGreen.color,
@@ -61,7 +61,7 @@ ThemeData occLightTheme(BuildContext context) => ThemeData(
       ),
     );
 
-ThemeData occDarkTheme(BuildContext context) => ThemeData(
+ThemeData customDarkTheme(BuildContext context) => ThemeData(
       textTheme: StandardTextTheme.textTheme(
         context,
         MainColors.colorsCustom.white.color,

@@ -1,5 +1,7 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:seek_rickandmorty/core/config/error_handle/exceptions.dart';
 import 'package:seek_rickandmorty/core/config/network/connectivity_checker.dart';
+import 'package:seek_rickandmorty/generated/l10n.dart';
 
 /// GraphQLApiConfig Class
 ///
@@ -38,7 +40,7 @@ class GraphQLApiConfig {
     try {
       // Check for internet connectivity
       if (await connectivityChecker.checkingConnection() == false) {
-        throw Exception('NoConnectionException');
+        throw NoConnectionException(S.current.connectionError);
       }
 
       final options = QueryOptions(
@@ -49,13 +51,13 @@ class GraphQLApiConfig {
       final result = await client.query(options).timeout(
         const Duration(seconds: 20),
         onTimeout: () {
-          throw Exception('TimeOutException');
+          throw TimeOutException(S.current.connectionTimeout);
         },
       );
 
       // Handle GraphQL response errors
       if (result.hasException) {
-        throw Exception('HandleOperationException');
+        throw HandleOperationException(result.exception);
       }
 
       return result.data ?? {};
@@ -77,7 +79,7 @@ class GraphQLApiConfig {
     try {
       // Check for internet connectivity
       if (await connectivityChecker.checkingConnection() == false) {
-        throw Exception('NoConnectionException');
+        throw NoConnectionException(S.current.connectionError);
       }
 
       final options = MutationOptions(
@@ -88,13 +90,13 @@ class GraphQLApiConfig {
       final result = await client.mutate(options).timeout(
         const Duration(seconds: 20),
         onTimeout: () {
-          throw Exception('TimeOutException');
+          throw TimeOutException(S.current.connectionTimeout);
         },
       );
 
       // Handle GraphQL response errors
       if (result.hasException) {
-        throw Exception('HandleOperationException');
+        throw HandleOperationException(result.exception);
       }
 
       return result.data ?? {};

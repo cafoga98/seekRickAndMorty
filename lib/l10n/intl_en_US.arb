@@ -1,0 +1,17 @@
+{
+  "@@locale": "en_US",
+  "connectionTimeout": "It seems the connection to the server is taking too long. Please check your internet connection and try again.",
+  "sendTimeout": "The request is taking too long to send. Make sure you have a stable internet connection and try again.",
+  "receiveTimeout": "The server is taking too long to respond. Please check your connection or try again later.",
+  "badCertificate": "There is an issue with the server's security certificate. Please contact technical support.",
+  "badResponse": "We received an unexpected response from the server. Please try again or contact support if the problem persists.",
+  "cancel": "Your request has been canceled. If this was not intentional, please try again.",
+  "serverResponseCode": "Server responded with status code",
+  "connectionError": "There was an issue connecting to the server. Check your internet connection or try again later.",
+  "unknownError": "An unexpected error occurred. Please try again or contact support if the issue continues.",
+  "badRequest": "Bad request. Please verify the submitted data.",
+  "unauthorized": "Unauthorized. Please log in again.",
+  "notFound": "Resource not found. Please check the URL.",
+  "serverError": "Internal server error. Please try again later.",
+  "mandatoryField": "This field is mandatory"
+}

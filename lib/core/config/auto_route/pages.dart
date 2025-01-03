@@ -1,0 +1,1 @@
+export 'package:seek_rickandmorty/temporary_page.dart';

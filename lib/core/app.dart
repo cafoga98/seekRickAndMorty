@@ -10,6 +10,11 @@ import 'package:seek_rickandmorty/features/characters/data/repositories/i_charac
 import 'package:seek_rickandmorty/features/characters/data/services/character_service.dart';
 import 'package:seek_rickandmorty/features/characters/data/services/i_character_service.dart';
 import 'package:seek_rickandmorty/features/characters/domain/blocs/character_bloc/character_bloc.dart';
+import 'package:seek_rickandmorty/features/episodes/data/repositories/episode_repository.dart';
+import 'package:seek_rickandmorty/features/episodes/data/repositories/i_episode_repository.dart';
+import 'package:seek_rickandmorty/features/episodes/data/services/episode_service.dart';
+import 'package:seek_rickandmorty/features/episodes/data/services/i_episode_service.dart';
+import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
 import 'package:seek_rickandmorty/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,11 +45,29 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             characterService: context.read<ICharacterService>(),
           ),
         ),
-      ],
-      child: BlocProvider(
-        create: (context) => CharacterBloc(
-          characterRepository: context.read<ICharacterRepository>(),
+        RepositoryProvider<IEpisodeService>(
+            create: (context) => EpisodeService(
+                  apiConfig: widget.getIt<GraphQLApiConfig>(),
+                )),
+        RepositoryProvider<IEpisodeRepository>(
+          create: (context) => EpisodeRepository(
+            episodeService: context.read<IEpisodeService>(),
+          ),
         ),
+      ],
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => CharacterBloc(
+              characterRepository: context.read<ICharacterRepository>(),
+            ),
+          ),
+          BlocProvider(
+            create: (context) => EpisodeBloc(
+              episodeRepository: context.read<IEpisodeRepository>(),
+            ),
+          ),
+        ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           theme: customDarkTheme(context),

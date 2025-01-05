@@ -71,7 +71,7 @@ class CharacterDetailPage extends StatelessWidget {
                                   child: CircleAvatar(
                                     radius: 66,
                                     backgroundImage:
-                                        NetworkImage(characterEntity.image),
+                                        NetworkImage(characterEntity.image!),
                                   ),
                                 ),
                                 const SizedBox(height: 5),
@@ -85,7 +85,7 @@ class CharacterDetailPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Text(
-                                    characterEntity.status,
+                                    characterEntity.status!,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -94,7 +94,7 @@ class CharacterDetailPage extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 10),
                                 Text(
-                                  characterEntity.name,
+                                  characterEntity.name!,
                                   style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold,
@@ -104,11 +104,13 @@ class CharacterDetailPage extends StatelessWidget {
                                 const SectionTitle(title: 'PROPERTIES'),
                                 const SizedBox(height: 10),
                                 PropertiesRow(
-                                    label: 'GENDER',
-                                    value: characterEntity.gender),
+                                  label: 'GENDER',
+                                  value: characterEntity.gender!,
+                                ),
                                 PropertiesRow(
-                                    label: 'SPECIES',
-                                    value: characterEntity.species),
+                                  label: 'SPECIES',
+                                  value: characterEntity.species!,
+                                ),
                                 const SizedBox(height: 20),
                                 const SectionTitle(title: 'WHEREABOUTS'),
                                 const SizedBox(height: 10),

@@ -71,13 +71,13 @@ class InformationCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    characterEntity.name,
+                    characterEntity.name!,
                     maxLines: 2,
                     textAlign: TextAlign.right,
                     style: HandleTextStyle.title(context),
                   ),
                   Text(
-                    characterEntity.gender,
+                    characterEntity.gender!,
                     textAlign: TextAlign.right,
                     maxLines: 1,
                     style: HandleTextStyle.body(context),
@@ -89,7 +89,7 @@ class InformationCardWidget extends StatelessWidget {
                     style: HandleTextStyle.body(context),
                   ),
                   Text(
-                    characterEntity.species,
+                    characterEntity.species!,
                     maxLines: 1,
                     overflow: TextOverflow.fade,
                     textAlign: TextAlign.right,

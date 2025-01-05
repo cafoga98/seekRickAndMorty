@@ -1,11 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seek_rickandmorty/core/design/tokens/images.dart';
 import 'package:seek_rickandmorty/core/design/widgets/information_card_widget.dart';
 import 'package:seek_rickandmorty/features/characters/domain/blocs/character_bloc/character_bloc.dart';
 
-@RoutePage()
 class CharacterPage extends StatefulWidget {
   const CharacterPage({super.key});
 
@@ -19,7 +17,7 @@ class _CharacterPageState extends State<CharacterPage> {
   @override
   void initState() {
     super.initState();
-
+    context.read<CharacterBloc>().add(const FetchCharacters());
     _scrollController.addListener(
       () {
         if (_scrollController.position.pixels >=

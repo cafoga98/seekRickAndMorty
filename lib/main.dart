@@ -13,11 +13,5 @@ void shareMain(
 
   final instance = DependencyInjectionConfig.instance;
 
-  await SystemChrome.setPreferredOrientations(
-    [
-      DeviceOrientation.portraitUp,
-    ],
-  );
-
   runApp(MyApp(getIt: instance));
 }

@@ -70,6 +70,7 @@ flutter:
     - .env.dev
     - .env.qa
     - .env.prd
+    - assets/img/
   fonts:
     - family: SignikaNegative
       fonts:

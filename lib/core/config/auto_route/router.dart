@@ -24,7 +24,8 @@ class AppRouter extends RootStackRouter {
 
   @override
   final List<AutoRoute> routes = [
-    AutoRoute(page: TemporaryRoute.page, path: '/', initial: true),
+    AutoRoute(page: HomeRoute.page, path: '/', initial: true),
+    AutoRoute(page: CharacterRoute.page, path: '/character', initial: false),
     //AutoRoute(page: LoginRoute.page, path: '/'),
   ];
 }

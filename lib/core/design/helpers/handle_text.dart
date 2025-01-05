@@ -6,15 +6,8 @@ class HandleTextStyle {
   /// Example: Use this for titles like in a form or a section heading.
   static TextStyle title(BuildContext context) {
     /// Get the screen width using MediaQuery.
-    double screenWidth = MediaQuery.of(context).size.width;
 
-    if (screenWidth > 600) {
-      /// For larger screens like tablets, use the 'titleLarge' style.
-      return Theme.of(context).textTheme.titleLarge!;
-    } else {
-      /// For smaller screens like phones, use the 'titleMedium' style.
-      return Theme.of(context).textTheme.titleMedium!;
-    }
+    return Theme.of(context).textTheme.titleLarge!;
   }
 
   /// Method to determine the appropriate "Display" text style

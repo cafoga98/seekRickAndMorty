@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seek_rickandmorty/features/characters/domain/blocs/character_bloc/character_bloc.dart';
 import 'package:seek_rickandmorty/features/characters/presentation/pages/character_page.dart';
+import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
+import 'package:seek_rickandmorty/features/episodes/presentation/pages/episode_page.dart';
 import 'package:seek_rickandmorty/features/home/presentation/widgets/custom_app_bar.dart';
 
 @RoutePage()
@@ -30,13 +32,11 @@ class _HomePageState extends State<HomePage> {
               setState(() {
                 currentPageIndex = 0;
               });
-
             },
             onPressedCharacter: () {
               setState(() {
                 currentPageIndex = 1;
               });
-              context.read<CharacterBloc>().add(const FetchCharacters());
             },
             onPressedLocation: () {
               setState(() {
@@ -47,6 +47,9 @@ class _HomePageState extends State<HomePage> {
               switch (currentPageIndex) {
                 case 0:
                   print('Episodios: $val');
+                  if (val.length > 3){
+                    context.read<EpisodeBloc>().add(SearchEpisode(value: val));
+                  }
                 case 1:
                   print('Personajes: $val');
                   if (val.length > 3) {
@@ -64,18 +67,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: <Widget>[
-        Card(
-          shadowColor: Colors.transparent,
-          margin: const EdgeInsets.all(8.0),
-          child: SizedBox.expand(
-            child: Center(
-              child: Text(
-                'Home page',
-                style: ThemeData().textTheme.titleLarge,
-              ),
-            ),
-          ),
-        ),
+        const EpisodePage(),
         const CharacterPage(),
         Card(
           shadowColor: Colors.transparent,

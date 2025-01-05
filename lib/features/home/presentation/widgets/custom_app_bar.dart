@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seek_rickandmorty/features/characters/domain/blocs/character_bloc/character_bloc.dart';
+import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
 
 class CustomAppBar extends StatefulWidget {
   final int currentPageIndex;
@@ -34,7 +37,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
               ? SizedBox(
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: TextField(
-                    decoration: InputDecoration(hintText: 'Busca un personaje'),
+                    decoration: InputDecoration(hintText: 'Buscar'),
                     onChanged: widget.onChanged,
                   ),
                 )
@@ -96,6 +99,18 @@ class _CustomAppBarState extends State<CustomAppBar> {
               setState(() {
                 isSearch = !isSearch;
               });
+              if (!isSearch) {
+                switch (widget.currentPageIndex) {
+                  case 0:
+                    context.read<EpisodeBloc>().add(const FetchEpisodes());
+                  case 1:
+                    context.read<CharacterBloc>().add(const FetchCharacters());
+                  case 2:
+                    print('Locaciones:');
+                  default:
+                    print('Default:');
+                }
+              }
             },
             icon: const Icon(
               Icons.search,

@@ -3,11 +3,11 @@ import 'package:seek_rickandmorty/features/locations/domain/entities/location_en
 
 class CharacterEntity {
   final String id;
-  final String name;
-  final String status;
-  final String species;
-  final String gender;
-  final String image;
+  final String? name;
+  final String? status;
+  final String? species;
+  final String? gender;
+  final String? image;
   final LocationEntity? location;
   final List<EpisodeEntity>? episodes;
   final String? originName;

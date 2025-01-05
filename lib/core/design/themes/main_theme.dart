@@ -53,11 +53,14 @@ ThemeData customLightTheme(BuildContext context) => ThemeData(
         titleTextStyle: HandleTextStyle.title(context),
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: MainColors.colorsCustom.portalGreen.color,
-        foregroundColor: Colors.transparent,
-        iconTheme: IconThemeData(color: MainColors.colorsCustom.white.color),
-        titleTextStyle: HandleTextStyle.headline(context)
-            .copyWith(color: MainColors.colorsCustom.white.color),
+        backgroundColor: Colors.transparent,
+        foregroundColor: MainColors.colorsCustom.portalGreen.color,
+        iconTheme: IconThemeData(
+          color: MainColors.colorsCustom.white.color,
+        ),
+        titleTextStyle: HandleTextStyle.headline(context).copyWith(
+          color: MainColors.colorsCustom.white.color,
+        ),
       ),
     );
 
@@ -114,8 +117,8 @@ ThemeData customDarkTheme(BuildContext context) => ThemeData(
             .copyWith(color: MainColors.colorsCustom.white.color),
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: MainColors.colorsCustom.portalDarkGreen.color,
-        foregroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        foregroundColor: MainColors.colorsCustom.portalGreen.color,
         iconTheme: IconThemeData(color: MainColors.colorsCustom.white.color),
         titleTextStyle: HandleTextStyle.headline(context)
             .copyWith(color: MainColors.colorsCustom.white.color),

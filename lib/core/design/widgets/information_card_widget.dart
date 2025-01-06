@@ -1,11 +1,9 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seek_rickandmorty/core/design/helpers/handle_text.dart';
 import 'package:seek_rickandmorty/core/design/tokens/colors.dart';
-import 'package:seek_rickandmorty/features/characters/domain/blocs/character_detail_cubit/character_detail_cubit.dart';
 import 'package:seek_rickandmorty/features/characters/domain/entities/character_entity.dart';
 import 'package:seek_rickandmorty/features/characters/presentation/pages/character_details_page.dart';
+import 'package:seek_rickandmorty/generated/l10n.dart';
 
 class InformationCardWidget extends StatelessWidget {
   final CharacterEntity characterEntity;
@@ -83,7 +81,7 @@ class InformationCardWidget extends StatelessWidget {
                     style: HandleTextStyle.body(context),
                   ),
                   Text(
-                    'I am ${characterEntity.status}',
+                    '${S.current.iAm} ${characterEntity.status}',
                     maxLines: 1,
                     textAlign: TextAlign.right,
                     style: HandleTextStyle.body(context),

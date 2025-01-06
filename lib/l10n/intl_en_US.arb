@@ -13,5 +13,22 @@
   "unauthorized": "Unauthorized. Please log in again.",
   "notFound": "Resource not found. Please check the URL.",
   "serverError": "Internal server error. Please try again later.",
-  "mandatoryField": "This field is mandatory"
+  "mandatoryField": "This field is mandatory",
+  "iAm": "I am",
+  "origin": "Origin",
+  "properties": "Properties",
+  "whereabouts": "Whereabouts",
+  "location": "Location",
+  "featuredChapters": "Featured Chapters",
+  "error": "Error",
+  "species": "Species",
+  "gender": "Gender",
+  "noMoreEpisodes": "No more episodes to load",
+  "iUnderstand": "I understand",
+  "releasesOfThe": "Releases of the",
+  "characters": "Characters",
+  "locations": "Locations",
+  "episodes": "Episodes",
+  "search": "Search",
+  "dimension": "Dimension"
 }

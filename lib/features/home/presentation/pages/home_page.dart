@@ -48,19 +48,16 @@ class _HomePageState extends State<HomePage> {
             onChanged: (val) {
               switch (currentPageIndex) {
                 case 0:
-                  print('Episodios: $val');
                   if (val.length > 3) {
                     context.read<EpisodeBloc>().add(SearchEpisode(value: val));
                   }
                 case 1:
-                  print('Personajes: $val');
                   if (val.length > 3) {
                     context
                         .read<CharacterBloc>()
                         .add(SearchCharacters(value: val));
                   }
                 case 2:
-                  print('Locaciones: $val');
                   if (val.length > 3) {
                     context
                         .read<LocationBloc>()

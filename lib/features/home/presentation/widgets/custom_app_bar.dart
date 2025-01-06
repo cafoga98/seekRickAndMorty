@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seek_rickandmorty/features/characters/domain/blocs/character_bloc/character_bloc.dart';
 import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
 import 'package:seek_rickandmorty/features/locations/domain/bloc/location_bloc/location_bloc.dart';
+import 'package:seek_rickandmorty/generated/l10n.dart';
 
 class CustomAppBar extends StatefulWidget {
   final int currentPageIndex;
@@ -48,18 +49,18 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       onPressed: widget.onPressedEpisodes,
                       icon: Column(
                         children: widget.currentPageIndex == 0
-                            ? const [
-                                Icon(
+                            ? [
+                                const Icon(
                                   Icons.local_movies,
                                   color: Colors.white,
                                 ),
-                                Text('Episodios')
+                                Text(S.current.episodes)
                               ]
-                            : const [
-                                Icon(
+                            : [
+                                const Icon(
                                   Icons.local_movies_outlined,
                                 ),
-                                Text('Episodios')
+                                Text(S.current.episodes)
                               ],
                       ),
                     ),
@@ -67,15 +68,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       onPressed: widget.onPressedCharacter,
                       icon: Column(
                         children: widget.currentPageIndex == 1
-                            ? const [
-                                Icon(Icons.people, color: Colors.white),
-                                Text('Personajes')
+                            ? [
+                                const Icon(Icons.people, color: Colors.white),
+                                Text(S.current.characters)
                               ]
-                            : const [
-                                Icon(
+                            : [
+                                const Icon(
                                   Icons.people_outline,
                                 ),
-                                Text('Personajes')
+                                Text(S.current.characters)
                               ],
                       ),
                     ),
@@ -83,13 +84,16 @@ class _CustomAppBarState extends State<CustomAppBar> {
                       onPressed: widget.onPressedLocation,
                       icon: Column(
                         children: widget.currentPageIndex == 2
-                            ? const [
-                                Icon(Icons.location_on, color: Colors.white),
-                                Text('Locaciones'),
+                            ? [
+                                const Icon(Icons.location_on,
+                                    color: Colors.white),
+                                Text(S.current.locations),
                               ]
-                            : const [
-                                Icon(Icons.location_on_outlined),
-                                Text('Locaciones'),
+                            : [
+                                const Icon(Icons.location_on_outlined),
+                                Text(
+                                  S.current.locations,
+                                )
                               ],
                       ),
                     ),

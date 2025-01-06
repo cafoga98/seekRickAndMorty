@@ -8,6 +8,7 @@ import 'package:seek_rickandmorty/core/design/widgets/dialog_message.dart';
 import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
 import 'package:seek_rickandmorty/features/episodes/domain/entities/episode_entity.dart';
 import 'package:seek_rickandmorty/features/episodes/presentation/widgets/episode_cover_widget.dart';
+import 'package:seek_rickandmorty/generated/l10n.dart';
 
 class EpisodePage extends StatefulWidget {
   const EpisodePage({super.key});
@@ -33,8 +34,8 @@ class _EpisodePageState extends State<EpisodePage> {
             return DialogMessage.show(
               context: context,
               title: 'Opss ...',
-              content: Text('No hay mas episodios para cargar'),
-              defaultActionText: 'Entiendo',
+              content: Text(S.current.noMoreEpisodes),
+              defaultActionText: S.current.iUnderstand,
             );
           }
         },
@@ -137,7 +138,7 @@ class _EpisodePageState extends State<EpisodePage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
           child: Text(
-            'Lanzamientos del $year',
+            '${S.current.releasesOfThe} $year',
             style: const TextStyle(
               color: Colors.white,
               fontSize: 18,

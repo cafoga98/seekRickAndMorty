@@ -185,13 +185,28 @@ Gracias por señalarlo. Aquí está la sección de **Instalación** corregida pa
 ## **Capturas de Pantalla**
 
 ### **Lista de Personajes**
-![Lista de Personajes](https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/iPad_mini_1.png)
+<p float="left">
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/iPad_mini_2.png" width="300" />
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/phone_3.jpeg" width="200" /> 
+</p>
 
 ### **Detalles de un Personaje**
-![Detalles de Personaje](https://via.placeholder.com/500x300?text=Detalles+de+Personaje)
+<p float="left">
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/iPad_mini_3.png" width="300" />
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/phone_1.jpeg" width="200" /> 
+</p>
 
 ### **Lista de Episodios**
-![Lista de Episodios](https://via.placeholder.com/500x300?text=Lista+de+Episodios)
+<p float="left">
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/iPad_mini_1.png" width="300" />
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/phone_4.jpeg" width="200" /> 
+</p>
+
+### **Lista de Ubicaciones**
+<p float="left">
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/iPad_mini_4.png" width="300" />
+  <img src="https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/phone_2.jpeg" width="200" /> 
+</p>
 
 ---
 

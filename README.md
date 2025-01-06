@@ -185,7 +185,7 @@ Gracias por señalarlo. Aquí está la sección de **Instalación** corregida pa
 ## **Capturas de Pantalla**
 
 ### **Lista de Personajes**
-![Lista de Personajes](https://via.placeholder.com/500x300?text=Lista+de+Personajes)
+![Lista de Personajes](https://github.com/cafoga98/seekRickAndMorty/blob/prd/assets/cover_images/iPad_mini_1.png)
 
 ### **Detalles de un Personaje**
 ![Detalles de Personaje](https://via.placeholder.com/500x300?text=Detalles+de+Personaje)

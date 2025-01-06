@@ -15,6 +15,11 @@ import 'package:seek_rickandmorty/features/episodes/data/repositories/i_episode_
 import 'package:seek_rickandmorty/features/episodes/data/services/episode_service.dart';
 import 'package:seek_rickandmorty/features/episodes/data/services/i_episode_service.dart';
 import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
+import 'package:seek_rickandmorty/features/locations/data/repositories/i_location_repository.dart';
+import 'package:seek_rickandmorty/features/locations/data/repositories/location_repository.dart';
+import 'package:seek_rickandmorty/features/locations/data/services/i_location_service.dart';
+import 'package:seek_rickandmorty/features/locations/data/services/location_service.dart';
+import 'package:seek_rickandmorty/features/locations/domain/bloc/location_bloc/location_bloc.dart';
 import 'package:seek_rickandmorty/generated/l10n.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -54,6 +59,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             episodeService: context.read<IEpisodeService>(),
           ),
         ),
+        RepositoryProvider<ILocationService>(
+          create: (context) => LocationService(
+            apiConfig: widget.getIt<GraphQLApiConfig>(),
+          ),
+        ),
+        RepositoryProvider<ILocationRepository>(
+          create: (context) => LocationRepository(
+            locationService: context.read<ILocationService>(),
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -65,6 +80,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           BlocProvider(
             create: (context) => EpisodeBloc(
               episodeRepository: context.read<IEpisodeRepository>(),
+            ),
+          ),
+          BlocProvider(
+            create: (context) => LocationBloc(
+              locationRepository: context.read<ILocationRepository>(),
             ),
           ),
         ],

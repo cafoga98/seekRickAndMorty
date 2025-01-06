@@ -76,10 +76,6 @@ class _EpisodePageState extends State<EpisodePage> {
               Flexible(
                 flex: 3,
                 child: BlocBuilder<EpisodeBloc, EpisodeState>(
-                  buildWhen: (context, state) => state.maybeWhen(
-                    orElse: () => true,
-                    noMoreEpisodes: () => false,
-                  ),
                   builder: (context, state) => state.maybeWhen(
                     orElse: () {
                       return const Center(

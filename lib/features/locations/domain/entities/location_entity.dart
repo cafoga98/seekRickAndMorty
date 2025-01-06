@@ -1,7 +1,7 @@
 class LocationEntity {
-  final String name;
-  final String type;
-  final String dimension;
+  final String? name;
+  final String? type;
+  final String? dimension;
 
   LocationEntity({
     required this.name,

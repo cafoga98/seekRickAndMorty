@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:seek_rickandmorty/features/characters/domain/blocs/character_bloc/character_bloc.dart';
 import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
+import 'package:seek_rickandmorty/features/locations/domain/bloc/location_bloc/location_bloc.dart';
 
 class CustomAppBar extends StatefulWidget {
   final int currentPageIndex;
@@ -106,7 +107,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   case 1:
                     context.read<CharacterBloc>().add(const FetchCharacters());
                   case 2:
-                    print('Locaciones:');
+                    context.read<LocationBloc>().add(const FetchLocation());
                   default:
                     print('Default:');
                 }

@@ -90,66 +90,6 @@ class EpisodeBloc extends Bloc<EpisodeEvent, EpisodeState> {
     }
   }
 
-/*  void _fetchCharacter(FetchEpisodes event, Emitter<EpisodeState> emit) async {
-    try {
-      currentPage ++;
-      if (currentPage >= 4) {
-        cacheList = (state as _Loaded).episode;
-        emit(const EpisodeState.noMoreEpisodes());
-      } else {
-        if (state is _Loaded) {
-          final currentState = state as _Loaded;
-          final currentEpisodes = currentState.episode;
-
-          emit(const EpisodeState.loading());
-
-          await episodeRepository.getEpisodeEntityByPage(currentPage).then(
-                (response) async {
-              await response.fold(
-                    (failure) async => emit(
-                  EpisodeState.error(failure.message!),
-                ),
-                    (episodes) async {
-                  final episodeGroup =
-                  await groupEpisodesByYear(episodes: episodes);
-                  final mergeMapsList =
-                  await mergeMaps(currentEpisodes, episodeGroup);
-                  emit(
-                    EpisodeState.loaded(
-                      episode: mergeMapsList,
-                    ),
-                  );
-                },
-              );
-            },
-          );
-        } else {
-          emit(const EpisodeState.loading());
-          await episodeRepository.getEpisodeEntityByPage(1).then(
-                (response) async {
-              await response.fold(
-                    (failure) async => emit(
-                  EpisodeState.error(failure.message!),
-                ),
-                    (episode) async {
-                  final episodeGroup =
-                  await groupEpisodesByYear(episodes: episode);
-                  emit(
-                    EpisodeState.loaded(
-                      episode: episodeGroup,
-                    ),
-                  );
-                },
-              );
-            },
-          );
-        }
-      }
-    } catch (e) {
-      emit(EpisodeState.error(e.toString()));
-    }
-  }*/
-
   void _searchCharacter(SearchEpisode event, Emitter<EpisodeState> emit) async {
     emit(const EpisodeState.loading());
     await episodeRepository.getEpisodeEntityByName(event.value).then(

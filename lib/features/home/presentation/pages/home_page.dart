@@ -6,6 +6,8 @@ import 'package:seek_rickandmorty/features/characters/presentation/pages/charact
 import 'package:seek_rickandmorty/features/episodes/domain/bloc/episode_bloc/episode_bloc.dart';
 import 'package:seek_rickandmorty/features/episodes/presentation/pages/episode_page.dart';
 import 'package:seek_rickandmorty/features/home/presentation/widgets/custom_app_bar.dart';
+import 'package:seek_rickandmorty/features/locations/domain/bloc/location_bloc/location_bloc.dart';
+import 'package:seek_rickandmorty/features/locations/presentation/pages/location_page.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -47,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               switch (currentPageIndex) {
                 case 0:
                   print('Episodios: $val');
-                  if (val.length > 3){
+                  if (val.length > 3) {
                     context.read<EpisodeBloc>().add(SearchEpisode(value: val));
                   }
                 case 1:
@@ -59,6 +61,11 @@ class _HomePageState extends State<HomePage> {
                   }
                 case 2:
                   print('Locaciones: $val');
+                  if (val.length > 3) {
+                    context
+                        .read<LocationBloc>()
+                        .add(SearchLocation(value: val));
+                  }
                 default:
                   print('Default: $val');
               }
@@ -69,18 +76,7 @@ class _HomePageState extends State<HomePage> {
       body: <Widget>[
         const EpisodePage(),
         const CharacterPage(),
-        Card(
-          shadowColor: Colors.transparent,
-          margin: const EdgeInsets.all(8.0),
-          child: SizedBox.expand(
-            child: Center(
-              child: Text(
-                'Home page',
-                style: ThemeData().textTheme.titleLarge,
-              ),
-            ),
-          ),
-        ),
+        const LocationPage(),
       ][currentPageIndex],
     );
   }

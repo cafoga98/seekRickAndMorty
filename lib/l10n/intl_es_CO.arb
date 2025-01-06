@@ -14,5 +14,22 @@
   "unauthorized": "No autorizado. Por favor, inicia sesión nuevamente.",
   "notFound": "Recurso no encontrado. Por favor, verifica la URL.",
   "serverError": "Error interno del servidor. Intenta nuevamente más tarde.",
-  "mandatoryField": "Este campo es requerido"
+  "mandatoryField": "Este campo es requerido",
+  "iAm": "Yo estoy",
+  "origin": "Origen",
+  "properties": "Propiedades",
+  "whereabouts": "Paradero",
+  "location": "Ubicación",
+  "featuredChapters": "Capítulos Destacados",
+  "error": "Error",
+  "species": "Especie",
+  "gender": "Género",
+  "noMoreEpisodes": "No hay más episodios para cargar",
+  "iUnderstand": "Entiendo",
+  "releasesOfThe": "Lanzamientos del",
+  "characters": "Personajes",
+  "locations": "Locaciones",
+  "episodes": "Episodios",
+  "search": "Buscar",
+  "dimension": "Dimension"
 }

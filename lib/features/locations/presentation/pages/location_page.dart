@@ -4,6 +4,7 @@ import 'package:seek_rickandmorty/core/design/tokens/colors.dart';
 import 'package:seek_rickandmorty/features/locations/domain/bloc/location_bloc/location_bloc.dart';
 import 'package:seek_rickandmorty/features/locations/domain/entities/location_entity.dart';
 import 'package:seek_rickandmorty/features/locations/presentation/widgets/location_cover_widget.dart';
+import 'package:seek_rickandmorty/generated/l10n.dart';
 
 class LocationPage extends StatefulWidget {
   const LocationPage({Key? key}) : super(key: key);
@@ -88,7 +89,7 @@ class _LocationPageState extends State<LocationPage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
           child: Text(
-            'Dimension $dimension',
+            '${S.current.dimension} $dimension',
             style: const TextStyle(
               color: Colors.white,
               fontSize: 18,

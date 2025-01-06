@@ -101,31 +101,33 @@ class CharacterDetailPage extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(height: 20),
-                                const SectionTitle(title: 'PROPERTIES'),
+                                SectionTitle(title: S.current.properties),
                                 const SizedBox(height: 10),
                                 PropertiesRow(
-                                  label: 'GENDER',
+                                  label: S.current.gender,
                                   value: characterEntity.gender!,
                                 ),
                                 PropertiesRow(
-                                  label: 'SPECIES',
+                                  label: S.current.species,
                                   value: characterEntity.species!,
                                 ),
                                 const SizedBox(height: 20),
-                                const SectionTitle(title: 'WHEREABOUTS'),
+                                SectionTitle(
+                                  title: S.current.whereabouts,
+                                ),
                                 const SizedBox(height: 10),
                                 PropertiesRow(
-                                  label: 'ORIGIN',
+                                  label: S.current.origin,
                                   value: characterEntity.originName ??
                                       S.current.notFound,
                                 ),
                                 PropertiesRow(
-                                  label: 'LOCATION',
+                                  label: S.current.location,
                                   value: characterEntity.location?.name ??
                                       S.current.notFound,
                                 ),
                                 const SizedBox(height: 20),
-                                const SectionTitle(title: 'FEATURED CHAPTERS'),
+                                 SectionTitle(title: S.current.featuredChapters),
                                 const SizedBox(height: 10),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,7 +147,7 @@ class CharacterDetailPage extends StatelessWidget {
                           },
                           error: (failure) => Center(
                             child: Text(
-                              'Error: ${failure.message}',
+                              '${S.current.error}: ${failure.message}',
                             ),
                           ),
                         ),

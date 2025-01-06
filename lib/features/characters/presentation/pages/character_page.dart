@@ -97,9 +97,6 @@ class _CharacterPageState extends State<CharacterPage> {
                   loaded: (characters, page) {
                     return LayoutBuilder(
                       builder: (context, constrain) {
-                        print('> constrain.maxWidth: ${constrain.maxWidth}');
-                        print(
-                            '> constrain.maxHeight: ${constrain.maxHeight}');
                         return GridView.count(
                           childAspectRatio: 2,
                           controller: _scrollController,
